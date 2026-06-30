@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhóm 7_Lồng đèn Trung thu</title>
+    <link rel="stylesheet" href="nhom7.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🏮 Lồng đèn trung thu</div>
+      <nav class="nav-links">
+        <a href="#home">Trang Chủ</a>
+        <a href="#products">Sản Phẩm</a>
+        <a href="#contact">Liên Hệ</a>
+      </nav>
+    </header>
+
+    <section id="home" class="hero-banner">
+      <div class="hero-content">
+        <h1>Rước Đèn Ngắm Trăng<br />Đong Đầy Ấm Áp</h1>
+        <p>
+          Trở về tuổi thơ với những mẫu lồng đèn tinh xảo, ngập tràn sắc màu lễ
+          hội.
+        </p>
+        <a href="#products" class="btn-cta">Khám Phá Ngay</a>
+      </div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="section-title">
+        <h2>Sản Phẩm Nổi Bật</h2>
+        <div class="underline"></div>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img
+            src="lồng_đèn_truyền_thống-removebg-preview.png"
+            alt="Lồng đèn truyền thống"
+            class="product-img"
+          />
+          <h3>Lồng Đèn Truyền Thống</h3>
+          <p class="price">1.000đ</p>
+          <p class="desc">
+            Lồng đèn được tạo hình ngôi sao và bao phủ bởi lớp giấy kiếng.
+          </p>
+          <button class="btn-buy" data-product="Lồng Đèn Truyền Thống">
+            Đặt Mua
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="lồng_đèn_hiện_đại-removebg-preview.png"
+            alt="Lồng đèn hiện đại"
+            class="product-img"
+          />
+          <h3>Lồng Đèn Hiện Đại</h3>
+          <p class="price">2.000đ</p>
+          <p class="desc">
+            Sản phẩm được quấn vòng dây kim tuyến xung quanh, phù hợp với để
+            trang trí nhà cửa hoặc làm quà tặng
+          </p>
+          <button class="btn-buy" data-product="Lồng Đèn Hiện Đại">
+            Đặt Mua
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="phát_sáng-removebg-preview.png"
+            alt="Lồng đèn phát sáng"
+            class="product-img"
+          />
+          <h3>Lồng Đèn Phát sáng</h3>
+          <p class="price">3.000đ</p>
+          <p class="desc">
+            Lồng đèn được gắn đèn LED, giúp phát sáng trong đêm.
+          </p>
+          <button class="btn-buy" data-product="Lồng Đèn Cao Cấp">
+            Đặt Mua
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="footer-section">
+      <h3>Liên Hệ Đặt Hàng Số Lượng Lớn</h3>
+      <p>📞 Hotline/Zalo: 090X.XXX.XXX</p>
+      <p>📍 Địa chỉ: Nhóm 7, TP. Hồ Chí Minh</p>
+      <hr />
+      <p class="copyright">
+        &copy; 2026 Đèn Trung Thu. Thiết kế đơn giản, tối ưu doanh thu.
+      </p>
+    </footer>
+
+    <div id="orderModal" class="modal-overlay">
+      <div class="modal-box">
+        <span class="close-btn">&times;</span>
+
+        <h3>🏮 THÔNG TIN ĐẶT HÀNG</h3>
+        <p style="text-align: center; color: #666; margin-bottom: 20px">
+          Bạn đang đặt mua:
+          <strong id="selected-product-name" style="color: #cc0000"></strong>
+        </p>
+
+        <form id="orderForm" class="order-form">
+          <input type="hidden" id="product_intent" name="Loại lồng đèn" />
+
+          <div class="form-group">
+            <label for="name">Họ và tên của bạn:</label>
+            <input
+              type="text"
+              id="name"
+              name="Tên khách hàng"
+              placeholder="Ví dụ: Nguyễn Văn A"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Số điện thoại liên lạc:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="Số điện thoại"
+              placeholder="Ví dụ: 0901234567"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Số lượng đặt mua:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="Số lượng"
+              min="1"
+              value="1"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="delivery">Hình thức nhận hàng:</label>
+            <select id="delivery" name="Hình thức nhận hàng" required>
+              <option value="" disabled selected>-- Chọn hình thức --</option>
+              <option value="Giao hàng tận nhà">
+                Giao hàng tận nhà (Ship COD)
+              </option>
+              <option value="Đến tận nơi lấy">
+                Đến tận nơi lấy (Tại cửa hàng)
+              </option>
+            </select>
+          </div>
+
+          <button type="submit" id="btnSubmit" class="btn-submit-order">
+            Xác Nhận Đặt Hàng
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById("orderModal");
+      const buyButtons = document.querySelectorAll(".btn-buy");
+      const closeButton = document.querySelector(".close-btn");
+      const productNameDisplay = document.getElementById(
+        "selected-product-name",
+      );
+      const productHiddenInput = document.getElementById("product_intent");
+      const form = document.getElementById("orderForm");
+      const btnSubmit = document.getElementById("btnSubmit");
+
+      // ⚠️ QUAN TRỌNG: Dán link Web App từ Google Apps Script của bạn vào đây
+      const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbxnhPT1-P-mpF-PW6p3AKicEy6I_kxoJLlCUr1Q1nbaumdXLuGHW5UrqvbC-nKXcBGH/exec";
+
+      // Mở popup khi nhấn "Đặt Mua"
+      buyButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const productName = this.getAttribute("data-product");
+          productNameDisplay.innerText = productName; // Hiện tên lên màn hình
+          productHiddenInput.value = productName; // Gán tên vào ô ẩn
+          modal.style.display = "block"; // Hiển thị popup
+        });
+      });
+
+      // Đóng popup khi nhấn nút X
+      closeButton.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+
+      // Đóng popup khi nhấp chuột ra ngoài vùng nền mờ
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      // Xử lý khi nhấn nút gửi form
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Tránh load lại trang web
+
+        // Đổi text để báo hiệu đang tải
+        btnSubmit.innerText = "Đang gửi đơn hàng...";
+        btnSubmit.disabled = true;
+
+        const formData = new FormData(form);
+
+        // Gửi dữ liệu ngầm lên Google Sheet
+        fetch(SCRIPT_URL, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.result === "success") {
+              alert(
+                "🎉 Đặt hàng thành công! Cửa hàng sẽ liên hệ với bạn sớm nhất.",
+              );
+              form.reset(); // Xóa trắng dữ liệu vừa nhập
+              modal.style.display = "none"; // Tự động đóng popup
+            } else {
+              alert("❌ Có lỗi xảy ra: " + data.error);
+            }
+          })
+          .catch((error) => {
+            alert("❌ Không thể kết nối đến máy chủ. Vui lòng thử lại!");
+            console.error("Error!", error.message);
+          })
+          .finally(() => {
+            // Phục hồi lại trạng thái nút bấm
+            btnSubmit.innerText = "Xác Nhận Đặt Hàng";
+            btnSubmit.disabled = false;
+          });
+      });
+    </script>
+  </body>
+</html>
