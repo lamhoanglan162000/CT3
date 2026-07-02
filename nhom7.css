@@ -241,6 +241,96 @@ body {
   margin: 0;
 }
 
+/* --- PHẦN QUY TRÌNH 4 BƯỚC --- */
+.process-section {
+  padding: 60px 0;
+  background-color: #ffffff; /* Đổi sang nền trắng để xen kẽ màu với các phần khác */
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Mặc định chia 4 cột đều nhau trên PC */
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.process-item {
+  text-align: center;
+}
+
+/* Khung chứa ảnh để định vị số thứ tự đè lên */
+.process-img-box {
+  position: relative;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+}
+
+.process-img {
+  width: 100%;
+  height: 180px; /* Cố định chiều cao ảnh quy trình */
+  object-fit: cover; /* Cắt ảnh thông minh chống méo hình */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 3px solid #ffffff; /* Tạo viền trắng sang trọng quanh ảnh */
+}
+
+/* Tạo hình tròn số thứ tự đè lên góc ảnh */
+.process-number {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: #dc3545; /* Màu đỏ chủ đạo nổi bật */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  z-index: 10;
+}
+
+.process-item h3 {
+  font-size: 1.2rem;
+  color: #111111;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.process-item p {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- RESPONSIVE CHO PHẦN QUY TRÌNH --- */
+@media (max-width: 992px) {
+  .process-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Màn hình vừa (Tablet): Chia thành lưới 2x2 */
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .process-grid {
+    grid-template-columns: 1fr; /* Màn hình nhỏ (Điện thoại): Xếp thành 1 hàng dọc */
+    gap: 35px;
+  }
+}
+
 /* --- RESPONSIVE CHO ĐIỆN THOẠI & TABLET --- */
 @media (max-width: 768px) {
   .features-grid {
